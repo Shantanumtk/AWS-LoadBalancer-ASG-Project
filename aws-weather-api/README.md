@@ -492,6 +492,7 @@ npx autocannon -d 180 -c 80 \
 
 ---
 ## Screenshots Of Deployment
+<img width="1710" height="922" alt="Lab-6-ALB-ASG-4" src="https://github.com/user-attachments/assets/b8de2bd7-7ced-4998-919b-09aec7121d26" />
 <img width="1710" height="963" alt="Lab-6-ALB-ASG-1" src="https://github.com/user-attachments/assets/30c01e22-a584-4735-bbaf-cd965bee041f" />
 <img width="1107" height="963" alt="Lab-6-ALB-ASG-2" src="https://github.com/user-attachments/assets/213bb365-651e-411b-892b-c5727493cfd3" />
 <img width="1107" height="963" alt="Lab-6-ALB-ASG-3" src="https://github.com/user-attachments/assets/16ec02be-a90f-4e5b-9844-941432679aec" />
