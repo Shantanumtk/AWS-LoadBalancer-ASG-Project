@@ -2,71 +2,6 @@
 
 FastAPI application demonstrating AWS Auto Scaling and Application Load Balancing.
 
-## 📋 Overview
-
-This project is a complete demonstration of:
-- **AWS Auto Scaling Groups (ASG)** - Automatic scaling based on CPU utilization
-- **Application Load Balancer (ALB)** - Traffic distribution across multiple instances
-- **EC2 Instance Management** - Automated deployment and configuration
-- **FastAPI Framework** - Modern Python web framework
-- **CloudWatch Monitoring** - Metrics and alarms
-
-## 🚀 Features
-
-- Real-time weather data API (simulated)
-- Load balancing demonstration with instance identification
-- Built-in load generation for testing auto-scaling
-- Health check endpoint for ALB
-- Comprehensive system metrics
-- Automatic deployment via Git clone
-
-## 📡 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Welcome message with instance info |
-| `/health` | GET | Health check (used by ALB) |
-| `/weather/{city}` | GET | Get weather for a specific city |
-| `/weather/bulk/cities` | GET | Get weather for multiple cities (CPU-intensive) |
-| `/instance-info` | GET | Detailed EC2 instance information |
-| `/generate-load` | GET | Generate CPU load (duration parameter) |
-| `/cities` | GET | List all available cities |
-| `/docs` | GET | Interactive API documentation (Swagger UI) |
-
-## 🏙️ Available Cities
-
-- New York
-- London
-- Tokyo
-- Paris
-- Sydney
-- Mumbai
-- Dubai
-- Toronto
-- Berlin
-- Singapore
-
-## 🔧 Local Development
-
-### Prerequisites
-- Python 3.11+
-- pip
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Shantanumtkg/aws-weather-api.git
-cd aws-weather-api
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application
-python main.py
-
-# Weather Lab — ALB + ASG SOP (README.md)
-
 A complete **step‑by‑step, copy‑paste Standard Operating Procedure (SOP)** to deploy the `aws-weather-api` app behind an **Application Load Balancer (ALB)** with an **Auto Scaling Group (ASG)**.
 
 > **Repo:** [https://github.com/Shantanumtk/AWS-LoadBalancer-ASG-Project/tree/main/aws-weather-api](https://github.com/Shantanumtk/AWS-LoadBalancer-ASG-Project/tree/main/aws-weather-api)
@@ -260,7 +195,7 @@ A complete **step‑by‑step, copy‑paste Standard Operating Procedure (SOP)**
 * **Protocol:** HTTP
 * **Port:** **5000**
 * **VPC:** `wl-vpc`
-* **Health checks:** Protocol **HTTP**, **Path `/`** *(change later to `/health`)*
+* **Health checks:** Protocol **HTTP**, **Path `/health`** *(change later to `/health`)*
   Healthy 2, Unhealthy 2, Interval 10s, Timeout 5s
 * **Create target group** *(don’t register targets manually)*
 
@@ -556,6 +491,11 @@ npx autocannon -d 180 -c 80 \
   * `wl-rtb-private-b` → default route `0.0.0.0/0` to **NAT GW** `wl-natgw-a` → associate **private-b**.
 
 ---
+## Screenshots Of Deployment
+<img width="1710" height="963" alt="Lab-6-ALB-ASG-1" src="https://github.com/user-attachments/assets/30c01e22-a584-4735-bbaf-cd965bee041f" />
+<img width="1107" height="963" alt="Lab-6-ALB-ASG-2" src="https://github.com/user-attachments/assets/213bb365-651e-411b-892b-c5727493cfd3" />
+<img width="1107" height="963" alt="Lab-6-ALB-ASG-3" src="https://github.com/user-attachments/assets/16ec02be-a90f-4e5b-9844-941432679aec" />
+
 
 ## Appendix B — Session Manager (SSM) quick setup on Ubuntu
 
